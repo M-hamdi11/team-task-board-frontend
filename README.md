@@ -2,7 +2,9 @@
 
 A responsive Kanban task board built with React, Vite and Tailwind CSS.
 
-**Backend repo:** https://github.com/M-hamdi11/team-task-board-backend.git
+- **Live demo:** https://team-task-board-frontend.vercel.app/
+- **Live API:** https://team-task-board-backend.vercel.app/tasks
+- **Backend repo:** https://github.com/M-hamdi11/team-task-board-backend
 
 ## Features
 
@@ -21,15 +23,23 @@ React, Vite, Tailwind CSS v4, Axios
 
 ## Getting started
 
-1. Start the backend first (see the backend repo).
-2. Then:
+1. Clone the repo and install dependencies:
 
 ```bash
 npm install
+```
+
+2. Copy `.env.example` to `.env` (Windows: `copy .env.example .env`) and set `VITE_API_URL`:
+   - **Deployed API:** `VITE_API_URL=https://team-task-board-backend.vercel.app`
+   - **Local backend:** leave it empty. Requests to `/tasks` are proxied to `http://localhost:3000` via `vite.config.js`, so start the backend first (see the backend repo).
+
+3. Run the app:
+
+```bash
 npm run dev
 ```
 
-Open `http://localhost:5173`. Requests to `/api` are proxied to the backend (`http://localhost:3000`) via `vite.config.js`.
+Open `http://localhost:5173`.
 
 ## Project structure
 
