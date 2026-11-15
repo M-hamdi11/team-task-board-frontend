@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import axios from 'axios'
 
-const API='tasks'
+const BASE = import.meta.env.VITE_API_URL ?? ''
+const API = `${BASE}/tasks`
 
-// رسالة السيرفر لو موجودة، وإلا رسالة axios
 const getMessage = (err) => err.response?.data?.error || err.message
 
 export default function useTasks() {

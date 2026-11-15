@@ -1,16 +1,42 @@
-# React + Vite
+# Team Task Board: Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive Kanban task board built with React, Vite and Tailwind CSS.
 
-Currently, two official plugins are available:
+**Backend repo:** https://github.com/M-hamdi11/team-task-board-backend.git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Three columns: To do, In progress, Done
+- Create, edit, delete and move tasks
+- Each task has a title, description, assignee and due date
+- Overdue tasks are highlighted (not shown as overdue once Done)
+- Search by title and filter by assignee
+- Data persisted in MongoDB through the backend API
+- Light / dark mode
+- Mobile-friendly layout
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+React, Vite, Tailwind CSS v4, Axios
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting started
+
+1. Start the backend first (see the backend repo).
+2. Then:
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`. Requests to `/api` are proxied to the backend (`http://localhost:3000`) via `vite.config.js`.
+
+## Project structure
+
+```
+src/
+  components/   Header, Column, TaskCard, TaskForm
+  hooks/        useTasks (state + API calls)
+  utils/        date helpers
+  App.jsx
+```
